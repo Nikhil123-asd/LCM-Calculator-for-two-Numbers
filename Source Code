@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void LCM();
+
+int main ()
+{
+    int num1,num2;
+    
+    printf("Enter First Number for LCM : ");
+    scanf("%d",&num1);
+    
+    printf("\nEnter Second Number for LCM : ");
+    scanf("%d",&num2);
+    
+    LCM(num1,num2);
+    
+    return 0;
+}
+
+void LCM(int a,int b)
+{
+    static int t=0;
+    
+    t+=(a>b)? a:b;
+    
+    if(t%a==0 && t%b==0)
+    printf("\nLCM of these two number is LCM(%d,%d) : %d",a,b,t);
+    
+    else
+    LCM(a,b);
+    
+}
